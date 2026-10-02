@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Цвет звезды (бордовый) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#8B0000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M12,2.5 L15.09,8.76 L22,9.77 L17,14.64 L18.18,21.52 L12,18.27 L5.82,21.52 L7,14.64 L2,9.77 L8.91,8.76 Z" />
+</vector>
