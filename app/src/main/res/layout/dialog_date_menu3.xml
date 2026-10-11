@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/TimerFrame"
+        android:layout_width="408dp"
+        android:layout_height="253dp"
+        android:background="#242424"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/frameContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/thisDayFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView81"
+                        android:layout_width="91dp"
+                        android:layout_height="63dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/timernexthour" />
+
+                    <TextView
+                        android:id="@+id/textView111"
+                        android:layout_width="313dp"
+                        android:layout_height="63dp"
+                        android:gravity="center_vertical"
+                        android:text="Позднее сегодня"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView81"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/nextdayTimeframe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thisDayFrame">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView51"
+                        android:layout_width="91dp"
+                        android:layout_height="63dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/timernextday" />
+
+                    <TextView
+                        android:id="@+id/textView131"
+                        android:layout_width="313dp"
+                        android:layout_height="63dp"
+                        android:gravity="center_vertical"
+                        android:text="Завтра"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView51"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/nextweekTimeframe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nextdayTimeframe">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView161"
+                        android:layout_width="91dp"
+                        android:layout_height="63dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/timernextweek" />
+
+                    <TextView
+                        android:id="@+id/textView141"
+                        android:layout_width="313dp"
+                        android:layout_height="63dp"
+                        android:gravity="center_vertical"
+                        android:text="Следующая неделя"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView161"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/setdateTimeframe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nextweekTimeframe">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView171"
+                        android:layout_width="91dp"
+                        android:layout_height="63dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/timernextsetdate" />
+
+                    <TextView
+                        android:id="@+id/textView151"
+                        android:layout_width="313dp"
+                        android:layout_height="63dp"
+                        android:gravity="center_vertical"
+                        android:text="Выбрать дату и время"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@+id/imageView171"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
