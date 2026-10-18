@@ -6,12 +6,12 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/_______"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/_______"
         android:supportsRtl="true"
         android:theme="@style/Theme.TuskMeneger">
-        <activity android:name=".MyDayLayout"/>
+        <activity android:name=".MyDayLayout" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -22,6 +22,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".important_layout"
+            android:exported="false"
+            android:theme="@style/Theme.TuskMeneger"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".planned_layout"
+            android:exported="false"
+            android:theme="@style/Theme.TuskMeneger"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".assigned_to_me_layout"
+            android:exported="false"
+            android:theme="@style/Theme.TuskMeneger"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Tusks"
+            android:exported="false"/>
     </application>
 
 </manifest>

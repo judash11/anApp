@@ -78,18 +78,25 @@ class MainActivity : AppCompatActivity() {
 
     fun criticalButton(){
         println("criticalButton")
+        val intent = Intent(this, important_layout::class.java)
+        startActivity(intent)
     }
 
     fun plannedButton(){
-        println("plannedButton")
+        val intent = Intent(this, planned_layout::class.java)
+        startActivity(intent)
     }
 
     fun appointedButton(){
         println("appointedButton")
+        val intent = Intent(this, assigned_to_me_layout::class.java)
+        startActivity(intent)
     }
 
     fun tasksButton(){
         println("tasksButton")
+        val intent = Intent(this, Tusks::class.java)
+        startActivity(intent)
     }
 
     fun scrollLiner(textView: TextView) {
@@ -97,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        // 1. FrameLayout как корневой контейнер
+
         val frameLayout = FrameLayout(this).apply {
             layoutParams = FrameLayout.LayoutParams(
                 FrameLayout.LayoutParams.MATCH_PARENT,
@@ -106,10 +113,7 @@ class MainActivity : AppCompatActivity() {
         }
         frameLayout.isClickable = true
 
-        // 2. ConstraintLayout внутри FrameLayout
 
-
-//        val constraint = ConstraintLayout.generateViewId()
 
 
 

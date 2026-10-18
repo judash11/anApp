@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        android:id="@+id/CalendarFrame"
+        android:id="@+id/CalendarFrameImportant"
         android:layout_width="408dp"
         android:layout_height="253dp"
         android:background="#242424"
