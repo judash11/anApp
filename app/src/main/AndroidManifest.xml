@@ -38,7 +38,7 @@
             android:theme="@style/Theme.TuskMeneger"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Tusks"
+            android:name=".Tasks"
             android:exported="false"/>
     </application>
 

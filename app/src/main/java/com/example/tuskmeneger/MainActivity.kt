@@ -1,39 +1,36 @@
 package com.example.tuskmeneger
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.icu.util.Calendar
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.FrameLayout
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.ActionBar
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
-import org.w3c.dom.Entity
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.util.Locale
+import com.example.tuskmeneger.repository.TuskViewModel
 
 
 class MainActivity : AppCompatActivity() {
+    private val viewModel: TuskViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        viewModel.createTusk()
+
         val myDay_button = findViewById<FrameLayout>(R.id.frameLayout1)
         myDay_button.setOnClickListener {
                 myDayButton()
+
             }
 
         val critical_button = findViewById<FrameLayout>(R.id.frameLayout2)
@@ -95,7 +92,7 @@ class MainActivity : AppCompatActivity() {
 
     fun tasksButton(){
         println("tasksButton")
-        val intent = Intent(this, Tusks::class.java)
+        val intent = Intent(this, Tasks::class.java)
         startActivity(intent)
     }
 
@@ -190,5 +187,6 @@ class MainActivity : AppCompatActivity() {
         }
         dialog.show()
     }
+
 
 }

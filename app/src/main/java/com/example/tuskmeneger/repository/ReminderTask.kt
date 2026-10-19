@@ -1,6 +1,6 @@
 package com.example.tuskmeneger.repository
 
-enum class ReminderTusk {
+enum class ReminderTask {
     Today,
     Tomorrow,
     NextWeek,

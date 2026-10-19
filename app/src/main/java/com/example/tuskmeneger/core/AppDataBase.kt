@@ -1,26 +1,30 @@
 package com.example.tuskmeneger.core
 
-import android.app.Application
+
+
+
 import android.content.Context
-import androidx.databinding.adapters.Converters
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import androidx.room3.Database
-import androidx.sqlite.db.SupportSQLiteDatabase
-import androidx.sqlite.db.SupportSQLiteOpenHelper
+import androidx.room3.Room
+import androidx.room3.RoomDatabase
+import androidx.room3.ColumnTypeConverter
+import androidx.room3.ColumnTypeConverters
+import androidx.sqlite.SQLiteConnection
+
+
+
 
 
 @Database(
     version = 1,
-    entities = [TuskEntity::class],
+    entities = [TaskEntity::class],
     exportSchema = false
 )
 
 
-@TypeConverters(Converters::class)
+@ColumnTypeConverters(Converters::class)
 abstract class AppDataBase : RoomDatabase(){
-    abstract fun TuskDao() : EntityDao
+    abstract fun TaskDao() : EntityDao
 
     companion object {
     @Volatile
@@ -35,7 +39,7 @@ abstract class AppDataBase : RoomDatabase(){
                     "appDb"
                 )
                     .addCallback(object : RoomDatabase.Callback(){
-                        override fun onCreate(db : SupportSQLiteDatabase){
+                        override suspend fun onCreate(db : SQLiteConnection){
                             super.onCreate(db)
                         }
                     }

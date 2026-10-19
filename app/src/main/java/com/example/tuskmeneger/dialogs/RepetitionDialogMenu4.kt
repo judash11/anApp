@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 
 import com.example.tuskmeneger.R
 import com.example.tuskmeneger.saportclassis.TimeGetter
-import java.time.DayOfWeek
 
 class RepetitionDialogMenu4 : Fragment(R.layout.dialog_date_menu4) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,7 +65,7 @@ class RepetitionDialogMenu4 : Fragment(R.layout.dialog_date_menu4) {
         close()
     }
     private fun everySatingListener(){
-        SatingsDialog().create(requireActivity(),::TimeGetterListener )
+        SatingDialog().create(requireActivity(),::TimeGetterListener )
     }
     private fun TimeGetterListener(timeGetter: TimeGetter?){
         if (timeGetter == null){
