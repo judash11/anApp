@@ -5,5 +5,13 @@ enum class Repetition {
     EveryWorkDay,
     EveryWeek,
     EveryYear,
-    Sating
+    EveryMonth,
+    SatingMonday,
+    SatingTuesday,
+    SatingWednesday,
+    SatingThursday,
+    SatingFriday,
+    SatingSaturday,
+    SatingSunday,
+    nullable
 }

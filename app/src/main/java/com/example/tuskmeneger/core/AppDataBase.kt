@@ -43,7 +43,8 @@ abstract class AppDataBase : RoomDatabase(){
                             super.onCreate(db)
                         }
                     }
-                ).build()
+                )
+                    .build()
                     .also { INSTANCE = it }
             }
         }

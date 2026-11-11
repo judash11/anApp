@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Прозрачный или любой другой фон внутри контейнера -->
+    <solid android:color="#232323" />
+
+    <!-- Параметры обводки: width — толщина, color — цвет -->
+    <stroke
+        android:width="2dp"
+        android:color="#00FF0000" />
+
+    <!-- Опционально: скругление углов -->
+    <corners android:radius="8dp" />
+</shape>

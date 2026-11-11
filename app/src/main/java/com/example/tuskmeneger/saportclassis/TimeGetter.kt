@@ -21,4 +21,5 @@ class TimeGetter(
     public fun isDayEnabled(): Boolean{
         return day
     }
+
 }

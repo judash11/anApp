@@ -15,7 +15,7 @@ class assigned_to_me_layout : AppCompatActivity() {
         setContentView(R.layout.content_assigned_to_me_layout)
 
         val arrow = findViewById<ImageView>(R.id.imageView303)
-        LayoutBasicEl(this, arrow).setupArrowListener()
+        LayoutBasicEl().setupArrowListener(this, arrow)
 
     }
 

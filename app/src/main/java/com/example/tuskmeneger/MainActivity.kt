@@ -15,17 +15,20 @@ import androidx.appcompat.app.AlertDialog
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.tuskmeneger.repository.TuskViewModel
+import com.example.tuskmeneger.core.AppDataBase
+import com.example.tuskmeneger.core.getContextApp
+import com.example.tuskmeneger.repository.TaskViewModel
 
 
 class MainActivity : AppCompatActivity() {
-    private val viewModel: TuskViewModel by viewModels()
+//    private val viewModel: TaskViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel.createTusk()
+//        viewModel.delTask()//удалить
+
 
         val myDay_button = findViewById<FrameLayout>(R.id.frameLayout1)
         myDay_button.setOnClickListener {

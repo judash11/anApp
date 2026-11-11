@@ -8,11 +8,11 @@
         android:id="@+id/CalendarFrameImportant"
         android:layout_width="408dp"
         android:layout_height="253dp"
-        android:background="#242424"
+        android:background="#383838"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/frameContainer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

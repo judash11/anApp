@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="210dp"
+    android:height="297dp"
+    android:viewportWidth="210"
+    android:viewportHeight="297">
+  <path
+      android:pathData="M63.03,73.14L141.97,73.14A28.16,28.16 0,0 1,170.13 101.3L170.13,252.74A28.16,28.16 0,0 1,141.97 280.91L63.03,280.91A28.16,28.16 0,0 1,34.86 252.74L34.86,101.3A28.16,28.16 0,0 1,63.03 73.14z"
+      android:strokeWidth="11.739"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="square"/>
+  <path
+      android:pathData="M74.34,95.32L74.34,95.32A4.05,37.66 0,0 1,78.39 132.98L78.39,215.17A4.05,37.66 0,0 1,74.34 252.84L74.34,252.84A4.05,37.66 0,0 1,70.29 215.17L70.29,132.98A4.05,37.66 0,0 1,74.34 95.32z"
+      android:strokeWidth="11.739"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="square"/>
+  <path
+      android:pathData="M125.79,96.04L125.79,96.04A4.05,37.66 0,0 1,129.84 133.7L129.84,215.89A4.05,37.66 0,0 1,125.79 253.56L125.79,253.56A4.05,37.66 0,0 1,121.74 215.89L121.74,133.7A4.05,37.66 0,0 1,125.79 96.04z"
+      android:strokeWidth="11.739"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="square"/>
+  <path
+      android:pathData="M42.82,73.24L158.5,73.24A37.66,1.1 0,0 1,196.16 74.34L196.16,74.34A37.66,1.1 0,0 1,158.5 75.45L42.82,75.45A37.66,1.1 0,0 1,5.15 74.34L5.15,74.34A37.66,1.1 0,0 1,42.82 73.24z"
+      android:strokeWidth="11.739"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="square"/>
+  <path
+      android:pathData="M103.42,61.46L103.42,61.46A11.78,3.31 0,0 1,115.19 64.77L115.19,64.77A11.78,3.31 0,0 1,103.42 68.09L103.42,68.09A11.78,3.31 0,0 1,91.64 64.77L91.64,64.77A11.78,3.31 0,0 1,103.42 61.46z"
+      android:strokeWidth="11.739"
+      android:fillColor="#00000000"
+      android:strokeColor="#ffffff"
+      android:strokeLineCap="square"/>
+</vector>

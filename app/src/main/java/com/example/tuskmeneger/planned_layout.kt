@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.tuskmeneger.dialogs.DateMenu
+import com.example.tuskmeneger.repository.ImportanceTask
 import com.example.tuskmeneger.saportclassis.LayoutBasicEl
 import com.google.android.material.card.MaterialCardView
 
@@ -20,7 +21,7 @@ class planned_layout : AppCompatActivity() {
         setContentView(R.layout.content_planned_layout)
 
         val arrow = findViewById<ImageView>(R.id.imageView23)
-        LayoutBasicEl(this,arrow).setupArrowListener()
+        LayoutBasicEl().setupArrowListener(this,arrow)
 
 
         val fab = findViewById<ImageView>(R.id.imageFABButtonMDLayout3)
@@ -101,7 +102,8 @@ class planned_layout : AppCompatActivity() {
         viewContainer.visibility = View.VISIBLE
 
         if (savedInstanceState == null) {
-            val dateMenu = DateMenu.newInstance(R.id.imageFABButtonMDLayout3,R.id.CalendarFramePlanned)
+            val dateMenu = DateMenu.newInstance(R.id.imageFABButtonMDLayout3,R.id.CalendarFramePlanned,
+                ImportanceTask.Easy)
             supportFragmentManager.beginTransaction()
                 .replace(R.id.frameContainerPlanned, dateMenu)
                 .commit()

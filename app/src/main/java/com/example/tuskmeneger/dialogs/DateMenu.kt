@@ -10,32 +10,49 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 
 import androidx.fragment.app.Fragment
+import com.example.tuskmeneger.MyDayLayout
 import com.example.tuskmeneger.R
+import com.example.tuskmeneger.important_layout
+import com.example.tuskmeneger.logic.Task
+import com.example.tuskmeneger.repository.Condition
+import com.example.tuskmeneger.repository.ImportanceTask
+import com.example.tuskmeneger.repository.RepositoryBD
+import com.example.tuskmeneger.saportclassis.ActivI
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+import java.time.LocalDateTime
 
 
 class DateMenu(
 //      val calendarFrameId: Int,
-
+//    val priority: ImportanceTask
 ) : Fragment(R.layout.dialog_date_menu1) {
 
     companion object{
-        val FAB = "FAB"
-        val CALENDARFRAMEID = "calendarFrameId"
-        fun newInstance(fab: Int,cal: Int): DateMenu{
+        var FAB = "FAB"
+        var CALENDARFRAMEID = "calendarFrameId"
+
+        var PRIORITY = "priority"
+        fun newInstance(fab: Int,cal: Int,pri: ImportanceTask): DateMenu{
             return DateMenu().apply {
                 arguments = bundleOf(
                     FAB to fab,
-                    CALENDARFRAMEID to cal
+                    CALENDARFRAMEID to cal,
+                    PRIORITY to pri,
                 )
             }
         }
     }
 
+    private val taskBuilder = Task.Builder()
 
-//    private lateinit var editText: EditText
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     val tasksButton = view.findViewById<FrameLayout>(R.id.tusksButton)
@@ -45,6 +62,7 @@ class DateMenu(
 
     val fab = arguments?.getInt(FAB)
     val calendarFrameId = arguments?.getInt(CALENDARFRAMEID)
+
 
 
     val calendarFrame: FrameLayout = requireActivity()
@@ -59,9 +77,10 @@ class DateMenu(
         println("calendar")
         if (calendar == null) {
             parentFragmentManager.beginTransaction()
-                .replace(calendarFrame.id, CalendarDialogMenu2(calendarFrame), "calendar1")
+                .replace(calendarFrame.id, CalendarDialogMenu2( taskBuilder), "calendar1")
                 .commit()
         }
+
     }
 
 
@@ -75,7 +94,7 @@ class DateMenu(
         println("notification")
         if(notification == null) {
             parentFragmentManager.beginTransaction()
-                .replace(calendarFrame.id, NotificationDialogMenu3(), "notification")
+                .replace(calendarFrame.id, NotificationDialogMenu3(taskBuilder), "notification")
                 .commit()
         }
     }
@@ -88,7 +107,7 @@ class DateMenu(
         println("repetition")
         if(repetition == null) {
             parentFragmentManager.beginTransaction()
-                .replace(calendarFrame.id, RepetitionDialogMenu4(), "repetition")
+                .replace(calendarFrame.id, RepetitionDialogMenu4(taskBuilder), "repetition")
                 .commit()
         }
     }
@@ -103,7 +122,7 @@ class DateMenu(
 
     val arrowButton = view.findViewById<ImageView>(R.id.arrowButton2)
 
-    // FAB находится в my_day_layout.xml, то есть в активити
+
     val imageButtonFab = requireActivity()
         .findViewById<ImageView>(fab!!)
 
@@ -135,10 +154,25 @@ class DateMenu(
 
         val notification = parentFragmentManager.findFragmentByTag("notification")
 
+        val priority: ImportanceTask = arguments?.get(PRIORITY) as ImportanceTask
 
 
 
         parentFragmentManager.beginTransaction().apply {
+
+        taskBuilder.setCreateTime(LocalDateTime.now())
+        val editText = view.findViewById<EditText>(R.id.editText1)
+        taskBuilder.setName(editText.text.toString())
+        taskBuilder.setImportance(priority)
+        taskBuilder.setCondition(Condition.InProgress)
+
+        if(taskBuilder.name != "") {
+            val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+            val finalTusk = taskBuilder.Build()
+
+            scope.launch { RepositoryBD().Build(finalTusk) }
+            scope.launch { (requireActivity() as ActivI).Scroller() }
+        }
         if (calendar != null) {
             println("ccc1")
             remove(calendar)
@@ -155,6 +189,15 @@ class DateMenu(
 
             viewFAB.visibility = View.VISIBLE
         viewCal.visibility = View.GONE
+
+
+
+//                val activity: ActivI = requireActivity()
+
+        println(taskBuilder.toString())
+
+
+        //sdfsdfdsfsdfsfdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 
         return false
     }

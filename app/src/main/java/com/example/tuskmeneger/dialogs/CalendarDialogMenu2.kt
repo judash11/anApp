@@ -2,22 +2,28 @@ package com.example.tuskmeneger.dialogs
 
 
 import android.app.DatePickerDialog
-import android.icu.util.Calendar
+import java.util.Calendar
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 
 import androidx.fragment.app.Fragment
 import com.example.tuskmeneger.R
+import com.example.tuskmeneger.logic.Task
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.util.Locale
 
-class CalendarDialogMenu2(
+open class CalendarDialogMenu2(
 //    val context: Context,
-    val container: FrameLayout
+//    val container: FrameLayout,
+    var task: Task.Builder
 ): Fragment(R.layout.dialog_date_menu2) {
 
-
+    private var taskObject: Calendar = Calendar.getInstance()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -101,6 +107,8 @@ class CalendarDialogMenu2(
         dialog.setOnShowListener {
             val positiveButton = dialog.getButton(DatePickerDialog.BUTTON_POSITIVE)
             positiveButton.setOnClickListener { _ ->
+                val picker = dialog.datePicker
+                dateDialog.onDateSet(picker, picker.year, picker.month, picker.dayOfMonth)
                 dialog.dismiss()
                 close()
             }
@@ -114,12 +122,20 @@ class CalendarDialogMenu2(
         dialog.show()
 
     }
-    private fun close(){
+    open fun close(){
         parentFragmentManager.beginTransaction()
             .remove(this)
             .commit()
     }
     private fun setDateManager(cal: Calendar){
-        println(dateFormat(cal.time))
+        val log = dateFormat(cal.time).toString()
+        Log.d(this.javaClass.toString(),log)
+        this.taskObject = cal
+        this.task.setCompleteTime(getTaskObject())
+
     }
+    private fun getTaskObject() = LocalDateTime.ofInstant(
+        this.taskObject.toInstant(),
+        ZoneId.systemDefault()
+    )
 }

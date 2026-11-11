@@ -11,7 +11,7 @@ class Tasks(): AppCompatActivity() {
         setContentView(R.layout.task_s)
 
         val arrow = findViewById<ImageView>(R.id.imageView2222)
-        LayoutBasicEl(this,arrow).setupArrowListener()
+        LayoutBasicEl().setupArrowListener(this,arrow)
 
     }
 }

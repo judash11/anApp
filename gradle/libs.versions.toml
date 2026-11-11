@@ -15,6 +15,7 @@ roomVersion = "3.0.3"
 roomCommonJvm = "2.8.5"
 databindingAdapters = "9.4.1"
 adapters = "3.2.0-alpha11"
+transportRuntime = "5.0.0"
 
 [libraries]
 # ... (все библиотеки остаются без изменений)
@@ -33,6 +34,7 @@ room-compiler = { group = "androidx.room3", name = "room3-compiler", version.ref
 androidx-room-common-jvm = { group = "androidx.room", name = "room-common-jvm", version.ref = "roomCommonJvm" }
 androidx-databinding-adapters = { group = "androidx.databinding", name = "databinding-adapters", version.ref = "databindingAdapters" }
 androidx-adapters = { group = "androidx.databinding", name = "adapters", version.ref = "adapters" }
+transport-runtime = { group = "com.google.android.datatransport", name = "transport-runtime", version.ref = "transportRuntime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

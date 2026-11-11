@@ -8,10 +8,10 @@
         android:id="@+id/repetitionMenu"
         android:layout_width="258dp"
         android:layout_height="457dp"
-        android:layout_marginBottom="-40dp"
-        android:background="#242424"
+        android:background="#383838"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

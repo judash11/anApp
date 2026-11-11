@@ -163,17 +163,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/constraintLayout101"
         android:layout_width="211dp"
         android:layout_height="316dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
+        android:visibility="gone"
         app:cardBackgroundColor="#242424"
         app:cardCornerRadius="6dp"
-        app:strokeWidth="0dp"
-        android:visibility="gone"
-        android:id="@+id/constraintLayout101"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardViewBut">
+        app:layout_constraintTop_toBottomOf="@+id/materialCardViewBut"
+        app:strokeWidth="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -181,10 +181,10 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/expired"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:clickable="true"
-                android:id="@+id/expired">
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/imageView25"
@@ -207,10 +207,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ToDayConstraint"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:clickable="true"
-                android:id="@+id/ToDayConstraint">
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/textView35"
@@ -234,10 +234,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nextDayConstraint"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:clickable="true"
-                android:id="@+id/nextDayConstraint">
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/textView36"
@@ -260,10 +260,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ThisWeekConstraint"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:clickable="true"
-                android:id="@+id/ThisWeekConstraint">
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/textView37"
@@ -286,10 +286,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LaterConstraint"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:clickable="true"
-                android:id="@+id/LaterConstraint">
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/textView38"
@@ -312,10 +312,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/AllThosePlanned"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:clickable="true"
-                android:id="@+id/AllThosePlanned">
+                android:clickable="true">
 
                 <TextView
                     android:id="@+id/textView39"
@@ -330,18 +330,18 @@
 
                 <ImageView
                     android:id="@+id/imageView30"
-                    app:tint="@color/white"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/idinahuy2"/>
+                    app:srcCompat="@drawable/idinahuy2"
+                    app:tint="@color/white" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
 

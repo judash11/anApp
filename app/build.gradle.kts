@@ -66,7 +66,8 @@
 //}
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.ksp) // <-- ДОБАВЛЕНО: без этого ksp(...) не работает
+    alias(libs.plugins.ksp)
+
 }
 
 android {
@@ -110,6 +111,7 @@ dependencies {
     implementation("androidx.room3:room3-runtime:$roomVersion")
     implementation(libs.androidx.adapters)
     implementation(libs.androidx.room.common.jvm)
+    implementation(libs.transport.runtime)
     // room-ktx для Room 3 пока не требуется, так как поддержка корутин встроена в runtime
     ksp("androidx.room3:room3-compiler:$roomVersion")
 
